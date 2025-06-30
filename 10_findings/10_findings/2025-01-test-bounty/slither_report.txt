@@ -1,1 +1,49 @@
+slither : Cannot execute `forge`, is it installed and in PATH?
+At line:1 char:1
++ slither . > slither_report.txt 2>&1
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (Cannot execute ...ed and in PATH?:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+'forge config --json' running
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "C:\Users\asus vivoBook\.local\bin\slither.exe\__main__.py", line 7, in <module>
+  File "C:\Users\asus vivoBook\pipx\venvs\slither-analyzer\Lib\site-packages\slither\__main__.py", line 776, in main
+    main_impl(all_detector_classes=detectors, all_printer_classes=printers)
+  File "C:\Users\asus vivoBook\pipx\venvs\slither-analyzer\Lib\site-packages\slither\__main__.py", line 882, in 
+main_impl
+    ) = process_all(filename, args, detector_classes, printer_classes)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\asus vivoBook\pipx\venvs\slither-analyzer\Lib\site-packages\slither\__main__.py", line 96, in 
+process_all
+    compilations = compile_all(target, **vars(args))
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\asus vivoBook\pipx\venvs\slither-analyzer\Lib\site-packages\crytic_compile\crytic_compile.py", line 
+722, in compile_all
+    compilations.append(CryticCompile(target, **kwargs))
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\asus vivoBook\pipx\venvs\slither-analyzer\Lib\site-packages\crytic_compile\crytic_compile.py", line 
+211, in __init__
+    self._compile(**kwargs)
+  File "C:\Users\asus vivoBook\pipx\venvs\slither-analyzer\Lib\site-packages\crytic_compile\crytic_compile.py", line 
+633, in _compile
+    self._platform.compile(self, **kwargs)
+  File "C:\Users\asus vivoBook\pipx\venvs\slither-analyzer\Lib\site-packages\crytic_compile\platform\foundry.py", line 
+66, in compile
+    foundry_config = self.config(self._target)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\asus vivoBook\pipx\venvs\slither-analyzer\Lib\site-packages\crytic_compile\platform\foundry.py", line 
+133, in config
+    subprocess.run(
+  File "C:\Users\asus vivoBook\AppData\Local\Programs\Python\Python312\Lib\subprocess.py", line 548, in run
+    with Popen(*popenargs, **kwargs) as process:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\asus vivoBook\AppData\Local\Programs\Python\Python312\Lib\subprocess.py", line 1026, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+  File "C:\Users\asus vivoBook\AppData\Local\Programs\Python\Python312\Lib\subprocess.py", line 1538, in _execute_child
+    hp, ht, pid, tid = _winapi.CreateProcess(executable, args,
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [WinError 2] The system cannot find the file specified
 
