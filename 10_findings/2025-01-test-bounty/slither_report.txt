@@ -1,49 +1,298 @@
-slither : Cannot execute `forge`, is it installed and in PATH?
+slither : 'forge clean' running (wd: D:\Audits\TestProtocol)
 At line:1 char:1
 + slither . > slither_report.txt 2>&1
 + ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    + CategoryInfo          : NotSpecified: (Cannot execute ...ed and in PATH?:String) [], RemoteException
+    + CategoryInfo          : NotSpecified: ('forge clean' r...s\TestProtocol):String) [], RemoteException
     + FullyQualifiedErrorId : NativeCommandError
  
 'forge config --json' running
-Traceback (most recent call last):
-  File "<frozen runpy>", line 198, in _run_module_as_main
-  File "<frozen runpy>", line 88, in _run_code
-  File "C:\Users\asus vivoBook\.local\bin\slither.exe\__main__.py", line 7, in <module>
-  File "C:\Users\asus vivoBook\pipx\venvs\slither-analyzer\Lib\site-packages\slither\__main__.py", line 776, in main
-    main_impl(all_detector_classes=detectors, all_printer_classes=printers)
-  File "C:\Users\asus vivoBook\pipx\venvs\slither-analyzer\Lib\site-packages\slither\__main__.py", line 882, in 
-main_impl
-    ) = process_all(filename, args, detector_classes, printer_classes)
-        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\asus vivoBook\pipx\venvs\slither-analyzer\Lib\site-packages\slither\__main__.py", line 96, in 
-process_all
-    compilations = compile_all(target, **vars(args))
-                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\asus vivoBook\pipx\venvs\slither-analyzer\Lib\site-packages\crytic_compile\crytic_compile.py", line 
-722, in compile_all
-    compilations.append(CryticCompile(target, **kwargs))
-                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\asus vivoBook\pipx\venvs\slither-analyzer\Lib\site-packages\crytic_compile\crytic_compile.py", line 
-211, in __init__
-    self._compile(**kwargs)
-  File "C:\Users\asus vivoBook\pipx\venvs\slither-analyzer\Lib\site-packages\crytic_compile\crytic_compile.py", line 
-633, in _compile
-    self._platform.compile(self, **kwargs)
-  File "C:\Users\asus vivoBook\pipx\venvs\slither-analyzer\Lib\site-packages\crytic_compile\platform\foundry.py", line 
-66, in compile
-    foundry_config = self.config(self._target)
-                     ^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\asus vivoBook\pipx\venvs\slither-analyzer\Lib\site-packages\crytic_compile\platform\foundry.py", line 
-133, in config
-    subprocess.run(
-  File "C:\Users\asus vivoBook\AppData\Local\Programs\Python\Python312\Lib\subprocess.py", line 548, in run
-    with Popen(*popenargs, **kwargs) as process:
-         ^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\asus vivoBook\AppData\Local\Programs\Python\Python312\Lib\subprocess.py", line 1026, in __init__
-    self._execute_child(args, executable, preexec_fn, close_fds,
-  File "C:\Users\asus vivoBook\AppData\Local\Programs\Python\Python312\Lib\subprocess.py", line 1538, in _execute_child
-    hp, ht, pid, tid = _winapi.CreateProcess(executable, args,
-                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-FileNotFoundError: [WinError 2] The system cannot find the file specified
-
+'forge build --build-info --skip */test/** */script/** --force' running (wd: D:\Audits\TestProtocol)
+ERROR:ContractSolcParsing:Impossible to generate IR for AccountMock.execute 
+(contracts/account/extensions/draft-ERC7821.sol#27-33):
+ 'NoneType' object has no attribute 'parameters'
+ERROR:ContractSolcParsing:Impossible to generate IR for AccountMock.supportsExecutionMode 
+(contracts/account/extensions/draft-ERC7821.sol#35-42):
+ 'NoneType' object has no attribute 'parameters'
+ERROR:ContractSolcParsing:Impossible to generate IR for AccountECDSAMock.execute 
+(contracts/account/extensions/draft-ERC7821.sol#27-33):
+ 'NoneType' object has no attribute 'parameters'
+ERROR:ContractSolcParsing:Impossible to generate IR for AccountECDSAMock.supportsExecutionMode 
+(contracts/account/extensions/draft-ERC7821.sol#35-42):
+ 'NoneType' object has no attribute 'parameters'
+ERROR:ContractSolcParsing:Impossible to generate IR for AccountP256Mock.execute 
+(contracts/account/extensions/draft-ERC7821.sol#27-33):
+ 'NoneType' object has no attribute 'parameters'
+ERROR:ContractSolcParsing:Impossible to generate IR for AccountP256Mock.supportsExecutionMode 
+(contracts/account/extensions/draft-ERC7821.sol#35-42):
+ 'NoneType' object has no attribute 'parameters'
+ERROR:ContractSolcParsing:Impossible to generate IR for AccountRSAMock.execute 
+(contracts/account/extensions/draft-ERC7821.sol#27-33):
+ 'NoneType' object has no attribute 'parameters'
+ERROR:ContractSolcParsing:Impossible to generate IR for AccountRSAMock.supportsExecutionMode 
+(contracts/account/extensions/draft-ERC7821.sol#35-42):
+ 'NoneType' object has no attribute 'parameters'
+ERROR:ContractSolcParsing:Impossible to generate IR for AccountERC7702Mock.execute 
+(contracts/account/extensions/draft-ERC7821.sol#27-33):
+ 'NoneType' object has no attribute 'parameters'
+ERROR:ContractSolcParsing:Impossible to generate IR for AccountERC7702Mock.supportsExecutionMode 
+(contracts/account/extensions/draft-ERC7821.sol#35-42):
+ 'NoneType' object has no attribute 'parameters'
+ERROR:ContractSolcParsing:Impossible to generate IR for 
+AccountERC7702WithModulesMock._isValidNestedPersonalSignSignature 
+(contracts/utils/cryptography/signers/draft-ERC7739.sol#51-54):
+ 'NoneType' object has no attribute 'parameters'
+ERROR:ContractSolcParsing:Impossible to generate IR for AccountERC7702WithModulesMock._isValidNestedTypedDataSignature 
+(contracts/utils/cryptography/signers/draft-ERC7739.sol#58-92):
+ 'NoneType' object has no attribute 'parameters'
+ERROR:ContractSolcParsing:Impossible to generate IR for AccountERC7702WithModulesMock.supportsExecutionMode 
+(contracts/account/extensions/draft-AccountERC7579.sol#97-104):
+ 'NoneType' object has no attribute 'parameters'
+ERROR:ContractSolcParsing:Impossible to generate IR for AccountERC7702WithModulesMock.isModuleInstalled 
+(contracts/account/extensions/draft-AccountERC7579.sol#139-150):
+ 'NoneType' object has no attribute 'parameters'
+ERROR:ContractSolcParsing:Impossible to generate IR for AccountERC7702WithModulesMock._execute 
+(contracts/account/extensions/draft-AccountERC7579.sol#213-227):
+ 'NoneType' object has no attribute 'parameters'
+ERROR:ContractSolcParsing:Impossible to generate IR for AccountERC7702WithModulesMock._installModule 
+(contracts/account/extensions/draft-AccountERC7579.sol#241-261):
+ 'NoneType' object has no attribute 'parameters'
+ERROR:ContractSolcParsing:Impossible to generate IR for AccountERC7702WithModulesMock._uninstallModule 
+(contracts/account/extensions/draft-AccountERC7579.sol#274-292):
+ 'NoneType' object has no attribute 'parameters'
+ERROR:ContractSolcParsing:Impossible to generate IR for AccountERC7702WithModulesMock._decodeFallbackData 
+(contracts/account/extensions/draft-AccountERC7579.sol#395-396):
+ 'NoneType' object has no attribute 'parameters'
+ERROR:ContractSolcParsing:Impossible to generate IR for AccountERC7913Mock.execute 
+(contracts/account/extensions/draft-ERC7821.sol#27-33):
+ 'NoneType' object has no attribute 'parameters'
+ERROR:ContractSolcParsing:Impossible to generate IR for AccountERC7913Mock.supportsExecutionMode 
+(contracts/account/extensions/draft-ERC7821.sol#35-42):
+ 'NoneType' object has no attribute 'parameters'
+ERROR:ContractSolcParsing:Impossible to generate IR for AccountMultiSignerMock.execute 
+(contracts/account/extensions/draft-ERC7821.sol#27-33):
+ 'NoneType' object has no attribute 'parameters'
+ERROR:ContractSolcParsing:Impossible to generate IR for AccountMultiSignerMock.supportsExecutionMode 
+(contracts/account/extensions/draft-ERC7821.sol#35-42):
+ 'NoneType' object has no attribute 'parameters'
+ERROR:ContractSolcParsing:Impossible to generate IR for AccountMultiSignerMock._isValidNestedPersonalSignSignature 
+(contracts/utils/cryptography/signers/draft-ERC7739.sol#51-54):
+ 'NoneType' object has no attribute 'parameters'
+ERROR:ContractSolcParsing:Impossible to generate IR for AccountMultiSignerMock._isValidNestedTypedDataSignature 
+(contracts/utils/cryptography/signers/draft-ERC7739.sol#58-92):
+ 'NoneType' object has no attribute 'parameters'
+ERROR:ContractSolcParsing:Impossible to generate IR for AccountMultiSignerMock.constructor 
+(contracts/utils/cryptography/EIP712.sol#65-75):
+ 'NoneType' object has no attribute 'parameters'
+ERROR:ContractSolcParsing:Impossible to generate IR for AccountMultiSignerMock._EIP712Name 
+(contracts/utils/cryptography/EIP712.sol#143-145):
+ 'NoneType' object has no attribute 'parameters'
+ERROR:ContractSolcParsing:Impossible to generate IR for AccountMultiSignerMock._EIP712Version 
+(contracts/utils/cryptography/EIP712.sol#154-156):
+ 'NoneType' object has no attribute 'parameters'
+ERROR:ContractSolcParsing:Impossible to generate IR for AccountMultiSignerWeightedMock.execute 
+(contracts/account/extensions/draft-ERC7821.sol#27-33):
+ 'NoneType' object has no attribute 'parameters'
+ERROR:ContractSolcParsing:Impossible to generate IR for AccountMultiSignerWeightedMock.supportsExecutionMode 
+(contracts/account/extensions/draft-ERC7821.sol#35-42):
+ 'NoneType' object has no attribute 'parameters'
+ERROR:ContractSolcParsing:Impossible to generate IR for 
+AccountMultiSignerWeightedMock._isValidNestedPersonalSignSignature 
+(contracts/utils/cryptography/signers/draft-ERC7739.sol#51-54):
+ 'NoneType' object has no attribute 'parameters'
+ERROR:ContractSolcParsing:Impossible to generate IR for 
+AccountMultiSignerWeightedMock._isValidNestedTypedDataSignature 
+(contracts/utils/cryptography/signers/draft-ERC7739.sol#58-92):
+ 'NoneType' object has no attribute 'parameters'
+ERROR:ContractSolcParsing:Impossible to generate IR for AccountMultiSignerWeightedMock.constructor 
+(contracts/utils/cryptography/EIP712.sol#65-75):
+ 'NoneType' object has no attribute 'parameters'
+ERROR:ContractSolcParsing:Impossible to generate IR for AccountMultiSignerWeightedMock._EIP712Name 
+(contracts/utils/cryptography/EIP712.sol#143-145):
+ 'NoneType' object has no attribute 'parameters'
+ERROR:ContractSolcParsing:Impossible to generate IR for AccountMultiSignerWeightedMock._EIP712Version 
+(contracts/utils/cryptography/EIP712.sol#154-156):
+ 'NoneType' object has no attribute 'parameters'
+INFO:Detectors:
+GovernorCountingFractional._countVote(uint256,address,uint8,uint256,bytes) 
+(contracts/governance/extensions/GovernorCountingFractional.sol#126-184) has a high cyclomatic complexity (14).
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#cyclomatic-complexity
+INFO:Detectors:
+Reentrancy in GovernorTimelockControl._cancel(address[],uint256[],bytes[],bytes32) 
+(contracts/governance/extensions/GovernorTimelockControl.sol#115-128):
+	External calls:
+	- _timelock.cancel(timelockId) (contracts/governance/extensions/GovernorTimelockControl.sol#123-125)
+	State variables written after the call(s):
+	- delete _timelockIds[proposalId] (contracts/governance/extensions/GovernorTimelockControl.sol#126-127)
+	GovernorTimelockControl._timelockIds (contracts/governance/extensions/GovernorTimelockControl.sol#25-26) can be used 
+in cross function reentrancies:
+	- GovernorTimelockControl._cancel(address[],uint256[],bytes[],bytes32) 
+(contracts/governance/extensions/GovernorTimelockControl.sol#115-128)
+	- GovernorTimelockControl._executeOperations(uint256,address[],uint256[],bytes[],bytes32) 
+(contracts/governance/extensions/GovernorTimelockControl.sol#94-105)
+	- GovernorTimelockControl._queueOperations(uint256,address[],uint256[],bytes[],bytes32) 
+(contracts/governance/extensions/GovernorTimelockControl.sol#74-88)
+	- GovernorTimelockControl.state(uint256) (contracts/governance/extensions/GovernorTimelockControl.sol#41-58)
+Reentrancy in AccountERC7579Hooked._installModule(uint256,address,bytes) 
+(contracts/account/extensions/draft-AccountERC7579Hooked.sol#68-77):
+	External calls:
+	- withHook() (contracts/account/extensions/draft-AccountERC7579Hooked.sol#71)
+		- hookData = IERC7579Hook(hook_).preCheck(msg.sender,msg.value,msg.data) 
+(contracts/account/extensions/draft-AccountERC7579Hooked.sol#35-36)
+		- IERC7579Hook(hook_).postCheck(hookData) (contracts/account/extensions/draft-AccountERC7579Hooked.sol#37-38)
+	State variables written after the call(s):
+	- _hook = module (contracts/account/extensions/draft-AccountERC7579Hooked.sol#75)
+	AccountERC7579Hooked._hook (contracts/account/extensions/draft-AccountERC7579Hooked.sol#21-22) can be used in cross 
+function reentrancies:
+	- AccountERC7579Hooked._installModule(uint256,address,bytes) 
+(contracts/account/extensions/draft-AccountERC7579Hooked.sol#68-77)
+	- AccountERC7579Hooked._uninstallModule(uint256,address,bytes) 
+(contracts/account/extensions/draft-AccountERC7579Hooked.sol#81-89)
+	- AccountERC7579Hooked.hook() (contracts/account/extensions/draft-AccountERC7579Hooked.sol#47-48)
+Reentrancy in GovernorTimelockAccess._queueOperations(uint256,address[],uint256[],bytes[],bytes32) 
+(contracts/governance/extensions/GovernorTimelockAccess.sol#220-238):
+	External calls:
+	- (None,nonce) = _manager.schedule(targets[i],calldatas[i],etaSeconds) 
+(contracts/governance/extensions/GovernorTimelockAccess.sol#236-237)
+	State variables written after the call(s):
+	- _setManagerData(plan,i,true,nonce) (contracts/governance/extensions/GovernorTimelockAccess.sol#237)
+		- plan.managerData[bucket][subindex] = nonce + 2 (contracts/governance/extensions/GovernorTimelockAccess.sol#331)
+		- plan.managerData[bucket][subindex] = 1 (contracts/governance/extensions/GovernorTimelockAccess.sol#331)
+	GovernorTimelockAccess._executionPlan (contracts/governance/extensions/GovernorTimelockAccess.sol#59-61) can be used 
+in cross function reentrancies:
+	- GovernorTimelockAccess._cancel(address[],uint256[],bytes[],bytes32) 
+(contracts/governance/extensions/GovernorTimelockAccess.sol#270-305)
+	- GovernorTimelockAccess._executeOperations(uint256,address[],uint256[],bytes[],bytes32) 
+(contracts/governance/extensions/GovernorTimelockAccess.sol#240-269)
+	- GovernorTimelockAccess._queueOperations(uint256,address[],uint256[],bytes[],bytes32) 
+(contracts/governance/extensions/GovernorTimelockAccess.sol#220-238)
+	- GovernorTimelockAccess.proposalExecutionPlan(uint256) 
+(contracts/governance/extensions/GovernorTimelockAccess.sol#155-167)
+	- GovernorTimelockAccess.proposalNeedsQueuing(uint256) 
+(contracts/governance/extensions/GovernorTimelockAccess.sol#168-174)
+	- GovernorTimelockAccess.propose(address[],uint256[],bytes[],string) 
+(contracts/governance/extensions/GovernorTimelockAccess.sol#175-207)
+Reentrancy in AccountERC7579Hooked._uninstallModule(uint256,address,bytes) 
+(contracts/account/extensions/draft-AccountERC7579Hooked.sol#81-89):
+	External calls:
+	- withHook() (contracts/account/extensions/draft-AccountERC7579Hooked.sol#84)
+		- hookData = IERC7579Hook(hook_).preCheck(msg.sender,msg.value,msg.data) 
+(contracts/account/extensions/draft-AccountERC7579Hooked.sol#35-36)
+		- IERC7579Hook(hook_).postCheck(hookData) (contracts/account/extensions/draft-AccountERC7579Hooked.sol#37-38)
+	State variables written after the call(s):
+	- _hook = address(0) (contracts/account/extensions/draft-AccountERC7579Hooked.sol#88)
+	AccountERC7579Hooked._hook (contracts/account/extensions/draft-AccountERC7579Hooked.sol#21-22) can be used in cross 
+function reentrancies:
+	- AccountERC7579Hooked._installModule(uint256,address,bytes) 
+(contracts/account/extensions/draft-AccountERC7579Hooked.sol#68-77)
+	- AccountERC7579Hooked._uninstallModule(uint256,address,bytes) 
+(contracts/account/extensions/draft-AccountERC7579Hooked.sol#81-89)
+	- AccountERC7579Hooked.hook() (contracts/account/extensions/draft-AccountERC7579Hooked.sol#47-48)
+Reentrancy in AccessManager.execute(address,bytes) (contracts/access/manager/AccessManager.sol#481-507):
+	External calls:
+	- Address.functionCallWithValue(target,data,msg.value) (contracts/access/manager/AccessManager.sol#504-506)
+	State variables written after the call(s):
+	- _executionId = executionIdBefore (contracts/access/manager/AccessManager.sol#507)
+	AccessManager._executionId (contracts/access/manager/AccessManager.sol#115) can be used in cross function 
+reentrancies:
+	- AccessManager._isExecuting(address,bytes4) (contracts/access/manager/AccessManager.sol#696-698)
+	- AccessManager.execute(address,bytes) (contracts/access/manager/AccessManager.sol#481-507)
+Reentrancy in ERC20FlashMint.flashLoan(IERC3156FlashBorrower,address,uint256,bytes) 
+(contracts/token/ERC20/extensions/ERC20FlashMint.sol#107-129):
+	External calls:
+	- receiver.onFlashLoan(_msgSender(),token,value,fee,data) != RETURN_VALUE 
+(contracts/token/ERC20/extensions/ERC20FlashMint.sol#117-120)
+	State variables written after the call(s):
+	- _burn(address(receiver),value + fee) (contracts/token/ERC20/extensions/ERC20FlashMint.sol#125)
+		- _balances[from] = fromBalance - value (contracts/token/ERC20/ERC20.sol#183)
+		- _balances[to] += value (contracts/token/ERC20/ERC20.sol#194-196)
+	ERC20._balances (contracts/token/ERC20/ERC20.sol#29-30) can be used in cross function reentrancies:
+	- ERC20._update(address,address,uint256) (contracts/token/ERC20/ERC20.sol#171-198)
+	- ERC20.balanceOf(address) (contracts/token/ERC20/ERC20.sol#82-87)
+	- _burn(address(receiver),value) (contracts/token/ERC20/extensions/ERC20FlashMint.sol#126)
+		- _balances[from] = fromBalance - value (contracts/token/ERC20/ERC20.sol#183)
+		- _balances[to] += value (contracts/token/ERC20/ERC20.sol#194-196)
+	ERC20._balances (contracts/token/ERC20/ERC20.sol#29-30) can be used in cross function reentrancies:
+	- ERC20._update(address,address,uint256) (contracts/token/ERC20/ERC20.sol#171-198)
+	- ERC20.balanceOf(address) (contracts/token/ERC20/ERC20.sol#82-87)
+	- _transfer(address(receiver),flashFeeReceiver,fee) (contracts/token/ERC20/extensions/ERC20FlashMint.sol#126-127)
+		- _balances[from] = fromBalance - value (contracts/token/ERC20/ERC20.sol#183)
+		- _balances[to] += value (contracts/token/ERC20/ERC20.sol#194-196)
+	ERC20._balances (contracts/token/ERC20/ERC20.sol#29-30) can be used in cross function reentrancies:
+	- ERC20._update(address,address,uint256) (contracts/token/ERC20/ERC20.sol#171-198)
+	- ERC20.balanceOf(address) (contracts/token/ERC20/ERC20.sol#82-87)
+	- _burn(address(receiver),value + fee) (contracts/token/ERC20/extensions/ERC20FlashMint.sol#125)
+		- _totalSupply += value (contracts/token/ERC20/ERC20.sol#176)
+		- _totalSupply -= value (contracts/token/ERC20/ERC20.sol#188-191)
+	ERC20._totalSupply (contracts/token/ERC20/ERC20.sol#32-33) can be used in cross function reentrancies:
+	- ERC20._update(address,address,uint256) (contracts/token/ERC20/ERC20.sol#171-198)
+	- ERC20.totalSupply() (contracts/token/ERC20/ERC20.sol#77-82)
+	- _burn(address(receiver),value) (contracts/token/ERC20/extensions/ERC20FlashMint.sol#126)
+		- _totalSupply += value (contracts/token/ERC20/ERC20.sol#176)
+		- _totalSupply -= value (contracts/token/ERC20/ERC20.sol#188-191)
+	ERC20._totalSupply (contracts/token/ERC20/ERC20.sol#32-33) can be used in cross function reentrancies:
+	- ERC20._update(address,address,uint256) (contracts/token/ERC20/ERC20.sol#171-198)
+	- ERC20.totalSupply() (contracts/token/ERC20/ERC20.sol#77-82)
+	- _transfer(address(receiver),flashFeeReceiver,fee) (contracts/token/ERC20/extensions/ERC20FlashMint.sol#126-127)
+		- _totalSupply += value (contracts/token/ERC20/ERC20.sol#176)
+		- _totalSupply -= value (contracts/token/ERC20/ERC20.sol#188-191)
+	ERC20._totalSupply (contracts/token/ERC20/ERC20.sol#32-33) can be used in cross function reentrancies:
+	- ERC20._update(address,address,uint256) (contracts/token/ERC20/ERC20.sol#171-198)
+	- ERC20.totalSupply() (contracts/token/ERC20/ERC20.sol#77-82)
+Reentrancy in ERC721Wrapper.withdrawTo(address,uint256[]) (contracts/token/ERC721/extensions/ERC721Wrapper.sol#47-59):
+	External calls:
+	- underlying().safeTransferFrom(address(this),account,tokenId) 
+(contracts/token/ERC721/extensions/ERC721Wrapper.sol#58-59)
+	State variables written after the call(s):
+	- _update(address(0),tokenId,_msgSender()) (contracts/token/ERC721/extensions/ERC721Wrapper.sol#54-55)
+		- _balances[from] -= 1 (contracts/token/ERC721/ERC721.sol#224-225)
+		- _balances[to] += 1 (contracts/token/ERC721/ERC721.sol#226-227)
+	ERC721._balances (contracts/token/ERC721/ERC721.sol#28-30) can be used in cross function reentrancies:
+	- ERC721._update(address,uint256,address) (contracts/token/ERC721/ERC721.sol#210-231)
+	- ERC721.balanceOf(address) (contracts/token/ERC721/ERC721.sol#49-55)
+	- _update(address(0),tokenId,_msgSender()) (contracts/token/ERC721/extensions/ERC721Wrapper.sol#54-55)
+		- _owners[tokenId] = to (contracts/token/ERC721/ERC721.sol#227-229)
+	ERC721._owners (contracts/token/ERC721/ERC721.sol#26-28) can be used in cross function reentrancies:
+	- ERC721._ownerOf(uint256) (contracts/token/ERC721/ERC721.sol#143-144)
+	- ERC721._update(address,uint256,address) (contracts/token/ERC721/ERC721.sol#210-231)
+	- _update(address(0),tokenId,_msgSender()) (contracts/token/ERC721/extensions/ERC721Wrapper.sol#54-55)
+		- _tokenApprovals[tokenId] = to (contracts/token/ERC721/ERC721.sol#386-388)
+	ERC721._tokenApprovals (contracts/token/ERC721/ERC721.sol#30-32) can be used in cross function reentrancies:
+	- ERC721._approve(address,uint256,address,bool) (contracts/token/ERC721/ERC721.sol#373-388)
+	- ERC721._getApproved(uint256) (contracts/token/ERC721/ERC721.sol#147-151)
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#reentrancy-vulnerabilities-1
+INFO:Detectors:
+EIP712._nameFallback (contracts/utils/cryptography/EIP712.sol#51) should be constant 
+EIP712._versionFallback (contracts/utils/cryptography/EIP712.sol#53) should be constant 
+Reference: 
+https://github.com/crytic/slither/wiki/Detector-Documentation#state-variables-that-could-be-declared-constant
+INFO:Detectors:
+Reentrancy in TimelockController.execute(address,uint256,bytes,bytes32,bytes32) 
+(contracts/governance/TimelockController.sol#348-361):
+	External calls:
+	- _execute(target,value,payload) (contracts/governance/TimelockController.sol#356-357)
+		- (success,returndata) = target.call{value: value}(data) (contracts/governance/TimelockController.sol#399-401)
+	State variables written after the call(s):
+	- _afterCall(id) (contracts/governance/TimelockController.sol#360)
+		- _timestamps[id] = _DONE_TIMESTAMP (contracts/governance/TimelockController.sol#423)
+	TimelockController._timestamps (contracts/governance/TimelockController.sol#29-31) can be used in cross function 
+reentrancies:
+	- TimelockController._afterCall(bytes32) (contracts/governance/TimelockController.sol#419-423)
+	- TimelockController._schedule(bytes32,uint256) (contracts/governance/TimelockController.sol#304-316)
+	- TimelockController.cancel(bytes32) (contracts/governance/TimelockController.sol#319-333)
+	- TimelockController.getTimestamp(bytes32) (contracts/governance/TimelockController.sol#192-196)
+Reentrancy in TimelockController.executeBatch(address[],uint256[],bytes[],bytes32,bytes32) 
+(contracts/governance/TimelockController.sol#375-395):
+	External calls:
+	- _execute(target,value,payload) (contracts/governance/TimelockController.sol#392)
+		- (success,returndata) = target.call{value: value}(data) (contracts/governance/TimelockController.sol#399-401)
+	State variables written after the call(s):
+	- _afterCall(id) (contracts/governance/TimelockController.sol#395)
+		- _timestamps[id] = _DONE_TIMESTAMP (contracts/governance/TimelockController.sol#423)
+	TimelockController._timestamps (contracts/governance/TimelockController.sol#29-31) can be used in cross function 
+reentrancies:
+	- TimelockController._afterCall(bytes32) (contracts/governance/TimelockController.sol#419-423)
+	- TimelockController._schedule(bytes32,uint256) (contracts/governance/TimelockController.sol#304-316)
+	- TimelockController.cancel(bytes32) (contracts/governance/TimelockController.sol#319-333)
+	- TimelockController.getTimestamp(bytes32) (contracts/governance/TimelockController.sol#192-196)
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#reentrancy-vulnerabilities
+INFO:Slither:. analyzed (383 contracts with 46 detectors), 12 result(s) found
