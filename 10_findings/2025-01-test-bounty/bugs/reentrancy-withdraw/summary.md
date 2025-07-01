@@ -1,4 +1,5 @@
 # Reentrancy in `withdraw()`
+**Status:** Fixed in commit <hash> ✅
 
 **Severity:** High  
 **Source:** Slither run 2025-07-01  
