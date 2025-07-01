@@ -7,12 +7,9 @@ import "../src/VulnBank.sol";
 /// @dev helper contract that re-enters the bank during withdraw
 contract Attacker {
     VulnBank bank;
+    constructor(VulnBank _bank) { bank = _bank; }
 
-    constructor(VulnBank _bank) {
-        bank = _bank;
-    }
-
-    // re-enter when Ether is received
+    // on receiving ETH, try to re-enter once
     receive() external payable {
         if (address(bank).balance >= 1 ether) {
             bank.withdraw();
@@ -20,8 +17,8 @@ contract Attacker {
     }
 
     function attack() external payable {
-        bank.deposit{value: 1 ether}();
-        bank.withdraw(); // first withdraw → re-enter in receive()
+        bank.deposit{value: 1 ether}(); // initial deposit
+        bank.withdraw();                // first withdraw → triggers receive()
     }
 }
 
@@ -33,22 +30,19 @@ contract ReentrancyTest is Test {
         bank     = new VulnBank();
         attacker = new Attacker(bank);
 
-        // seed the bank so the second (re-entrant) withdrawal has funds to steal
-        bank.deposit{value: 10 ether}();
-
-        // give the attacker some starting ETH
-        vm.deal(address(attacker), 2 ether);
+        bank.deposit{value: 10 ether}();      // seed bank with float
+        vm.deal(address(attacker), 2 ether);  // fund attacker
     }
 
     function testExploit() public {
-        uint256 start = address(attacker).balance;
-
-        vm.prank(address(attacker));
+        // The patched bank should revert the re-entrancy attempt
+        vm.startPrank(address(attacker));
+        vm.expectRevert("transfer failed");
         attacker.attack{value: 1 ether}();
+        vm.stopPrank();
 
-        // attacker balance increased  → exploit succeeded
-        assertGt(address(attacker).balance, start);
-        // bank drained
-        assertEq(address(bank).balance, 0);
+        // ─── Balances unchanged ───
+        assertEq(address(attacker).balance, 2 ether);  // attacker kept original 2 ETH
+        assertEq(address(bank).balance,    10 ether); // bank still has prefunded 10 ETH
     }
 }
